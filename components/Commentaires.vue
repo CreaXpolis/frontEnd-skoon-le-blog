@@ -39,7 +39,7 @@ export default {
   },
   async mounted () {
     try {
-      const allCategories = await fetch('http://localhost:1337/commentaires', {
+      const allCategories = await fetch('https://skoon-le-blog-back.herokuapp.com/commentaires', {
         method: 'GET',
         headers: this.headers
       }).then(this.checkStatus)
@@ -65,7 +65,7 @@ export default {
       e.preventDefault()
 
       try {
-        const response = await fetch('http://localhost:1337/commentaires', {
+        const response = await fetch('https://skoon-le-blog-back.herokuapp.com/commentaires', {
           method: 'POST',
           headers: this.headers,
           body: JSON.stringify(this.modifiedData)
